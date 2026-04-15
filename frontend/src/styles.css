@@ -1,0 +1,386 @@
+/* ============================================================
+   BlockOTP — Complete UI Styles
+   Design: Clean dark-blue enterprise theme
+   ============================================================ */
+
+:root {
+  --primary:    #1B4F8A;
+  --primary-lt: #2563EB;
+  --accent:     #0E6B5E;
+  --bg:         #F0F4F9;
+  --card-bg:    #FFFFFF;
+  --text:       #1A2332;
+  --text-muted: #6B7A8D;
+  --border:     #D0DCF0;
+  --error:      #DC2626;
+  --success:    #16A34A;
+  --radius:     12px;
+  --shadow:     0 4px 24px rgba(27,79,138,0.10);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ─────────────────────────────────────────────────────────
+   AUTH PAGES (Login + OTP)
+───────────────────────────────────────────────────────── */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #EFF4FF 0%, #E8F4FD 50%, #E0F5EF 100%);
+  padding: 1rem;
+}
+
+.auth-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow);
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.auth-logo h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.auth-logo p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* ─────────────────────────────────────────────────────────
+   FORM ELEMENTS
+───────────────────────────────────────────────────────── */
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary-lt);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  background: #fff;
+}
+
+input:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-primary {
+  width: 100%;
+  padding: 0.875rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-primary:hover:not(:disabled) { background: var(--primary-lt); }
+.btn-primary:active:not(:disabled) { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-ghost {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  color: var(--primary);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-ghost:hover { background: var(--bg); border-color: var(--primary); }
+
+.btn-link {
+  background: none;
+  border: none;
+  color: var(--primary-lt);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.btn-link:disabled { opacity: 0.4; cursor: default; }
+
+.error-msg {
+  background: #FEF2F2;
+  color: var(--error);
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.875rem;
+}
+
+.auth-note {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* ─────────────────────────────────────────────────────────
+   OTP BOXES
+───────────────────────────────────────────────────────── */
+
+.otp-card { max-width: 440px; }
+
+.otp-timer {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.otp-boxes {
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.otp-box {
+  width: 52px;
+  height: 60px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+  padding: 0;
+  caret-color: transparent;
+}
+
+.otp-box:focus {
+  border-color: var(--primary-lt);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
+  background: #fff;
+  transform: scale(1.04);
+}
+
+.otp-box.filled { border-color: var(--primary); background: #EFF4FF; }
+.otp-box.error  { border-color: var(--error); background: #FEF2F2; }
+
+.chain-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #F0F9F5;
+  border: 1px solid #BBE5D3;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin: 0.75rem 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   DASHBOARD
+───────────────────────────────────────────────────────── */
+
+.dashboard { min-height: 100vh; background: var(--bg); }
+
+.dash-header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.dash-brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dash-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.dash-main { padding: 2rem; max-width: 900px; margin: 0 auto; }
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.stat-icon {
+  width: 48px; height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.stat-value { font-weight: 700; font-size: 1rem; color: var(--text); }
+.stat-label { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+.audit-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.audit-section h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.audit-desc {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.audit-list { display: flex; flex-direction: column; gap: 0.625rem; }
+
+.audit-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.audit-badge {
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.25rem 0.625rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+
+.audit-details { flex: 1; }
+.audit-tx   { font-size: 0.8125rem; font-family: 'Courier New', monospace; color: var(--text-muted); }
+.audit-time { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+
+.loading, .empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────────────────────
+   SPINNER
+───────────────────────────────────────────────────────── */
+
+.spinner {
+  display: inline-block;
+  width: 18px; height: 18px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─────────────────────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .stat-grid { grid-template-columns: 1fr; }
+  .auth-card { padding: 1.75rem 1.25rem; }
+  .otp-box   { width: 44px; height: 52px; font-size: 1.25rem; }
+  .dash-main { padding: 1rem; }
+}

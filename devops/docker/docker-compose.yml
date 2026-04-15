@@ -1,0 +1,298 @@
+version: '3.8'
+
+# ============================================================
+#  BLOCKCHAIN OTP - Full Stack Docker Compose
+#  Services: Fabric Network + Backend API + Frontend + DB + Monitoring
+# ============================================================
+
+networks:
+  fabric_net:
+    driver: bridge
+  app_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  prometheus_data:
+  grafana_data:
+  orderer_data:
+  peer0_data:
+  peer1_data:
+
+services:
+
+  # ─────────────────────────────────────────────────────────
+  # HYPERLEDGER FABRIC NETWORK
+  # ─────────────────────────────────────────────────────────
+
+  ca.otp.com:
+    image: hyperledger/fabric-ca:1.5
+    container_name: ca.otp.com
+    environment:
+      - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
+      - FABRIC_CA_SERVER_CA_NAME=ca-otp
+      - FABRIC_CA_SERVER_TLS_ENABLED=true
+      - FABRIC_CA_SERVER_PORT=7054
+    ports:
+      - "7054:7054"
+    command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
+    volumes:
+      - ./crypto-config/ca:/etc/hyperledger/fabric-ca-server
+    networks:
+      - fabric_net
+    restart: unless-stopped
+
+  orderer.otp.com:
+    image: hyperledger/fabric-orderer:2.5
+    container_name: orderer.otp.com
+    environment:
+      - FABRIC_LOGGING_SPEC=INFO
+      - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      - ORDERER_GENERAL_LISTENPORT=7050
+      - ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      - ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+      - ORDERER_GENERAL_TLS_ENABLED=true
+      - ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      - ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt]
+      - ORDERER_GENERAL_BOOTSTRAPMETHOD=none
+      - ORDERER_CHANNELPARTICIPATION_ENABLED=true
+    ports:
+      - "7050:7050"
+      - "7053:7053"
+      - "9443:9443"
+    volumes:
+      - orderer_data:/var/hyperledger/production/orderer
+      - ./crypto-config/ordererOrganizations/otp.com/orderers/orderer.otp.com/msp:/var/hyperledger/orderer/msp
+      - ./crypto-config/ordererOrganizations/otp.com/orderers/orderer.otp.com/tls:/var/hyperledger/orderer/tls
+      - ./channel-artifacts:/var/hyperledger/configtx
+    networks:
+      - fabric_net
+    restart: unless-stopped
+
+  peer0.org1.otp.com:
+    image: hyperledger/fabric-peer:2.5
+    container_name: peer0.org1.otp.com
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=docker_fabric_net
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_GOSSIP_USELEADERELECTION=true
+      - CORE_PEER_GOSSIP_ORGLEADER=false
+      - CORE_PEER_PROFILE_ENABLED=false
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_PEER_ID=peer0.org1.otp.com
+      - CORE_PEER_ADDRESS=peer0.org1.otp.com:7051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:7051
+      - CORE_PEER_CHAINCODEADDRESS=peer0.org1.otp.com:7052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:7052
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer1.org1.otp.com:8051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.otp.com:7051
+      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb0:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+    ports:
+      - "7051:7051"
+    volumes:
+      - peer0_data:/var/hyperledger/production
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ./crypto-config/peerOrganizations/org1.otp.com/peers/peer0.org1.otp.com/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config/peerOrganizations/org1.otp.com/peers/peer0.org1.otp.com/tls:/etc/hyperledger/fabric/tls
+    networks:
+      - fabric_net
+    depends_on:
+      - couchdb0
+    restart: unless-stopped
+
+  peer1.org1.otp.com:
+    image: hyperledger/fabric-peer:2.5
+    container_name: peer1.org1.otp.com
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=docker_fabric_net
+      - FABRIC_LOGGING_SPEC=INFO
+      - CORE_PEER_TLS_ENABLED=true
+      - CORE_PEER_ID=peer1.org1.otp.com
+      - CORE_PEER_ADDRESS=peer1.org1.otp.com:8051
+      - CORE_PEER_LISTENADDRESS=0.0.0.0:8051
+      - CORE_PEER_CHAINCODEADDRESS=peer1.org1.otp.com:8052
+      - CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0:8052
+      - CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.otp.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.otp.com:8051
+      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      - CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      - CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=admin
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=adminpw
+    ports:
+      - "8051:8051"
+    volumes:
+      - peer1_data:/var/hyperledger/production
+      - /var/run/docker.sock:/host/var/run/docker.sock
+      - ./crypto-config/peerOrganizations/org1.otp.com/peers/peer1.org1.otp.com/msp:/etc/hyperledger/fabric/msp
+      - ./crypto-config/peerOrganizations/org1.otp.com/peers/peer1.org1.otp.com/tls:/etc/hyperledger/fabric/tls
+    networks:
+      - fabric_net
+    depends_on:
+      - couchdb1
+    restart: unless-stopped
+
+  couchdb0:
+    image: couchdb:3.3
+    container_name: couchdb0
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+    ports:
+      - "5984:5984"
+    networks:
+      - fabric_net
+    restart: unless-stopped
+
+  couchdb1:
+    image: couchdb:3.3
+    container_name: couchdb1
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=adminpw
+    ports:
+      - "6984:5984"
+    networks:
+      - fabric_net
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────
+  # APPLICATION LAYER
+  # ─────────────────────────────────────────────────────────
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: otp_postgres
+    environment:
+      - POSTGRES_DB=otpdb
+      - POSTGRES_USER=${POSTGRES_USER:-otpuser}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-otppass}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - app_net
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U otpuser -d otpdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: otp_redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass ${REDIS_PASSWORD:-redispass}
+    networks:
+      - app_net
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ../../backend
+      dockerfile: Dockerfile
+    container_name: otp_backend
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-otpuser}:${POSTGRES_PASSWORD:-otppass}@postgres:5432/otpdb
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-redispass}@redis:6379
+      - JWT_SECRET=${JWT_SECRET:-change-me-in-production}
+      - FABRIC_CHANNEL=otp-channel
+      - FABRIC_CHAINCODE=otp-contract
+      - FABRIC_MSP_ID=Org1MSP
+      - FABRIC_PEER_ENDPOINT=peer0.org1.otp.com:7051
+      - OTP_EXPIRY_SECONDS=300
+      - RATE_LIMIT_WINDOW_MS=900000
+      - RATE_LIMIT_MAX=5
+    ports:
+      - "4000:4000"
+    volumes:
+      - ../../backend:/app
+      - /app/node_modules
+      - ./crypto-config:/app/crypto-config:ro
+    networks:
+      - app_net
+      - fabric_net
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ../../frontend
+      dockerfile: Dockerfile
+    container_name: otp_frontend
+    ports:
+      - "3000:80"
+    networks:
+      - app_net
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    container_name: otp_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../nginx/ssl:/etc/nginx/ssl:ro
+    networks:
+      - app_net
+    depends_on:
+      - frontend
+      - backend
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────
+  # MONITORING
+  # ─────────────────────────────────────────────────────────
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: otp_prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - app_net
+    restart: unless-stopped
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: otp_grafana
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin123}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ../monitoring/grafana-dashboards:/etc/grafana/provisioning/dashboards
+    networks:
+      - app_net
+    restart: unless-stopped

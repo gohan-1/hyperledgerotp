@@ -1,0 +1,53 @@
+# ============================================================
+#  prometheus.yml — Monitoring configuration for BlockOTP
+# ============================================================
+
+global:
+  scrape_interval:     15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'blockchain-otp'
+
+# Alert rules (add alertmanager config for production)
+rule_files:
+  - /etc/prometheus/alerts.yml
+
+scrape_configs:
+  # Node.js backend metrics
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend:4000']
+    metrics_path: /metrics
+
+  # Fabric peer metrics
+  - job_name: 'fabric-peer0'
+    static_configs:
+      - targets: ['peer0.org1.otp.com:9443']
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+
+  - job_name: 'fabric-peer1'
+    static_configs:
+      - targets: ['peer1.org1.otp.com:9443']
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+
+  # Fabric orderer metrics
+  - job_name: 'fabric-orderer'
+    static_configs:
+      - targets: ['orderer.otp.com:9443']
+    scheme: https
+    tls_config:
+      insecure_skip_verify: true
+
+  # PostgreSQL
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres:9187']
+
+  # Prometheus self-monitoring
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

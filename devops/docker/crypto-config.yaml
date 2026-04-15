@@ -1,0 +1,19 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: otp.com
+    Specs:
+      - Hostname: orderer
+
+PeerOrgs:
+  - Name: Org1
+    Domain: org1.otp.com
+    EnableNodeOUs: true
+    Template:
+      Count: 2
+    Users:
+      Count: 1
+    Specs:
+      - Hostname: peer0
+        CommonName: peer0.org1.otp.com
+      - Hostname: peer1
+        CommonName: peer1.org1.otp.com
