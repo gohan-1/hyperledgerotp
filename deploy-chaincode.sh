@@ -77,7 +77,7 @@ log "Package ID: $PACKAGE_ID"
 log "Approving chaincode definition for Org1..."
 peer lifecycle chaincode approveformyorg \
   -o localhost:7050 \
-  --channelID otp-channel \
+  --channelID otpchannel \
   --name "$CC_NAME" \
   --version "$CC_VERSION" \
   --package-id "$PACKAGE_ID" \
@@ -88,7 +88,7 @@ ok "Approved"
 # ─── Check commit readiness ───────────────────────────────
 log "Checking commit readiness..."
 peer lifecycle chaincode checkcommitreadiness \
-  --channelID otp-channel \
+  --channelID otpchannel \
   --name "$CC_NAME" \
   --version "$CC_VERSION" \
   --sequence "$CC_SEQ" \
@@ -99,7 +99,7 @@ peer lifecycle chaincode checkcommitreadiness \
 log "Committing chaincode to channel..."
 peer lifecycle chaincode commit \
   -o localhost:7050 \
-  --channelID otp-channel \
+  --channelID otpchannel \
   --name "$CC_NAME" \
   --version "$CC_VERSION" \
   --sequence "$CC_SEQ" \
@@ -115,7 +115,7 @@ log "Running smoke test invoke..."
 sleep 5
 peer chaincode invoke \
   -o localhost:7050 \
-  -C otp-channel \
+  -C otpchannel \
   -n "$CC_NAME" \
   --tls --cafile "$ORDERER_CA" \
   --peerAddresses localhost:7051 \
@@ -128,7 +128,7 @@ echo ""
 echo -e "${GREEN}═══════════════════════════════════════════${NC}"
 echo -e "${GREEN}  OTP chaincode deployed successfully!${NC}"
 echo -e "${GREEN}═══════════════════════════════════════════${NC}"
-echo "  Channel:   otp-channel"
+echo "  Channel:   otpchannel"
 echo "  Chaincode: $CC_NAME v$CC_VERSION"
 echo "  Next: cd backend && npm install && node server.js"
 echo ""

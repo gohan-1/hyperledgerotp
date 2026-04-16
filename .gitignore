@@ -16,7 +16,6 @@ vendor/
 # Ignore Gradle build output directory
 build
 
-devops/docker/crypto-config/
 .env
 
 # Ignore Maven build output directory

@@ -215,7 +215,7 @@ services:
       - DATABASE_URL=postgresql://${POSTGRES_USER:-otpuser}:${POSTGRES_PASSWORD:-otppass}@postgres:5432/otpdb
       - REDIS_URL=redis://:${REDIS_PASSWORD:-redispass}@redis:6379
       - JWT_SECRET=${JWT_SECRET:-change-me-in-production}
-      - FABRIC_CHANNEL=otp-channel
+      - FABRIC_CHANNEL=otpchannel
       - FABRIC_CHAINCODE=otp-contract
       - FABRIC_MSP_ID=Org1MSP
       - FABRIC_PEER_ENDPOINT=peer0.org1.otp.com:7051
