@@ -1,0 +1,10 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: valtrans.com
+    EnableNodeOUs: true
+    Specs:
+      - Hostname: orderer      # ← use Specs instead of Template, explicitly name it "orderer"
+        SANS:
+          - localhost
+    Users:
+      Count: 1
