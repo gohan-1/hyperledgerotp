@@ -1,66 +1,84 @@
 // ============================================================
 //  routes/otp.js — OTP request and verification endpoints
+//  Database: MongoDB (mongoose)
 // ============================================================
 'use strict';
 
-const express   = require('express');
+const express = require('express');
 const rateLimit = require('express-rate-limit');
-const crypto    = require('crypto');
-const jwt       = require('jsonwebtoken');
-const { Pool }  = require('pg');
+const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
 
-const fabric    = require('../services/fabric-client');
-const logger    = require('../config/logger');
+const fabric = require('../services/fabric-client');
+const logger = require('../config/logger');
+const OtpSession = require('../models/Otpsession');
+const User = require('../models/User');
 
 const router = express.Router();
 
 // ─────────────────────────────────────────────────────────────
-// DATABASE POOL
-// ─────────────────────────────────────────────────────────────
-
-const db = new Pool({ connectionString: process.env.DATABASE_URL });
-
-// ─────────────────────────────────────────────────────────────
-// RATE LIMITING (OTP-specific — stricter than global)
-// 5 OTP requests per 15 minutes per IP
+// RATE LIMITING — 5 OTP requests per 15 min per userId / IP
 // ─────────────────────────────────────────────────────────────
 
 const otpRateLimit = rateLimit({
-  windowMs : 15 * 60 * 1000,
-  max      : 5,
+  windowMs: 15 * 60 * 1000,
+  max: 5,
   keyGenerator: (req) => req.body.userId || req.ip,
-  message  : { error: 'Too many OTP requests. Please wait 15 minutes.' },
+  message: { error: 'Too many OTP requests. Please wait 15 minutes.' },
 });
 
 // ─────────────────────────────────────────────────────────────
 // HELPERS
 // ─────────────────────────────────────────────────────────────
 
-/** Generate a cryptographically random 6-digit OTP */
 function generateOTP() {
   return crypto.randomInt(100000, 999999).toString();
 }
 
-/** Compute expiry timestamp (5 minutes from now) */
 function getExpiry(seconds = 300) {
   return Math.floor(Date.now() / 1000) + seconds;
 }
 
-/** Deliver OTP to the user. In production, integrate your email/notification service here */
 async function deliverOTP(userId, otp) {
   // TODO: Replace with your delivery method:
   // - Email: sendgrid, nodemailer
   // - Push notification: Firebase FCM
-  // - Internal display: return in response (dev only)
   logger.info(`[DEV ONLY] OTP for ${userId}: ${otp}`);
   return true;
 }
 
 // ─────────────────────────────────────────────────────────────
 // POST /api/otp/request
-// Generate a new OTP, hash it, store hash on blockchain
+// Generate OTP → hash it → store hash on blockchain
 // ─────────────────────────────────────────────────────────────
 
+/**
+ * @swagger
+ * /api/otp/request:
+ *   post:
+ *     summary: Request a new OTP
+ *     tags: [OTP]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [userId]
+ *             properties:
+ *               userId:
+ *                 type: string
+ *                 example: user_123
+ *     responses:
+ *       200:
+ *         description: OTP sent successfully
+ *       400:
+ *         description: Invalid userId
+ *       404:
+ *         description: User not found
+ *       429:
+ *         description: Rate limit exceeded
+ */
 router.post('/request', otpRateLimit, async (req, res, next) => {
   const { userId } = req.body;
 
@@ -69,30 +87,34 @@ router.post('/request', otpRateLimit, async (req, res, next) => {
   }
 
   try {
-    // Check user exists in our database
-    const userResult = await db.query('SELECT id FROM users WHERE user_id = $1', [userId]);
-    if (userResult.rows.length === 0) {
+    // Verify user exists in MongoDB
+    const user = await User.findOne({ userId });
+    if (!user) {
       return res.status(404).json({ error: 'User not found' });
     }
 
-    // Generate OTP
-    const otp       = generateOTP();
+    // Generate OTP + timestamps
+    const otp = generateOTP();
     const timestamp = Math.floor(Date.now() / 1000);
-    const expiry    = getExpiry(parseInt(process.env.OTP_EXPIRY_SECONDS) || 300);
+    const expiry = getExpiry(parseInt(process.env.OTP_EXPIRY_SECONDS) || 300);
 
-    // Compute hash — same formula as verification
+    // Compute hash (same formula used during verify)
     const otpHash = fabric.computeOTPHash(otp, userId, String(timestamp));
 
-    // Store hash on blockchain (not the raw OTP)
+    console.log(otpHash)
+
+    // Store hash on Hyperledger Fabric ledger
     await fabric.storeOTPHash(userId, otpHash, expiry);
 
-    // Store timestamp in PostgreSQL so we can recompute the hash during verify
-    await db.query(
-      `INSERT INTO otp_sessions (user_id, otp_timestamp, expires_at)
-       VALUES ($1, $2, to_timestamp($3))
-       ON CONFLICT (user_id) DO UPDATE
-       SET otp_timestamp = $2, expires_at = to_timestamp($3)`,
-      [userId, timestamp, expiry]
+    // Upsert OTP session in MongoDB
+    await OtpSession.findOneAndUpdate(
+      { userId },
+      {
+        userId,
+        otpTimestamp: timestamp,
+        expiresAt: new Date(expiry * 1000),
+      },
+      { upsert: true, new: true }
     );
 
     // Deliver OTP to user
@@ -102,10 +124,10 @@ router.post('/request', otpRateLimit, async (req, res, next) => {
 
     logger.info(`OTP requested for user: ${userId}`);
     return res.json({
-      success : true,
-      message : 'OTP sent successfully',
+      success: true,
+      message: 'OTP sent successfully',
       expiresIn: 300,
-      // DEV ONLY: remove this in production
+      // DEV ONLY — remove in production
       ...(process.env.NODE_ENV === 'development' ? { devOtp: otp } : {}),
     });
 
@@ -117,13 +139,40 @@ router.post('/request', otpRateLimit, async (req, res, next) => {
 
 // ─────────────────────────────────────────────────────────────
 // POST /api/otp/verify
-// Verify submitted OTP against blockchain hash
+// Verify submitted OTP against blockchain hash → issue JWT
 // ─────────────────────────────────────────────────────────────
 
+/**
+ * @swagger
+ * /api/otp/verify:
+ *   post:
+ *     summary: Verify OTP and receive JWT
+ *     tags: [OTP]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [userId, otp]
+ *             properties:
+ *               userId:
+ *                 type: string
+ *                 example: user_123
+ *               otp:
+ *                 type: string
+ *                 example: "654321"
+ *     responses:
+ *       200:
+ *         description: OTP verified — returns JWT
+ *       400:
+ *         description: Validation error or no active session
+ *       401:
+ *         description: Invalid or expired OTP
+ */
 router.post('/verify', async (req, res, next) => {
   const { userId, otp } = req.body;
 
-  // Input validation
   if (!userId || !otp) {
     return res.status(400).json({ error: 'userId and otp are required' });
   }
@@ -132,22 +181,16 @@ router.post('/verify', async (req, res, next) => {
   }
 
   try {
-    // Get the original timestamp from PostgreSQL (needed to recompute hash)
-    const sessionResult = await db.query(
-      'SELECT otp_timestamp FROM otp_sessions WHERE user_id = $1',
-      [userId]
-    );
-
-    if (sessionResult.rows.length === 0) {
+    // Fetch OTP session from MongoDB
+    const session = await OtpSession.findOne({ userId });
+    if (!session) {
       return res.status(400).json({ error: 'No active OTP session found' });
     }
 
-    const { otp_timestamp } = sessionResult.rows[0];
+    // Recompute hash with the original timestamp stored at request time
+    const inputHash = fabric.computeOTPHash(otp, userId, String(session.otpTimestamp));
 
-    // Recompute hash using the same formula as generation
-    const inputHash = fabric.computeOTPHash(otp, userId, String(otp_timestamp));
-
-    // Verify against blockchain
+    // Verify against Hyperledger Fabric ledger
     const isValid = await fabric.verifyOTPHash(userId, inputHash);
 
     if (!isValid) {
@@ -155,10 +198,10 @@ router.post('/verify', async (req, res, next) => {
       return res.status(401).json({ error: 'Invalid or expired OTP' });
     }
 
-    // Clean up session
-    await db.query('DELETE FROM otp_sessions WHERE user_id = $1', [userId]);
+    // Clean up session document
+    await OtpSession.deleteOne({ userId });
 
-    // Issue JWT token
+    // Issue JWT
     const token = jwt.sign(
       { userId, iat: Math.floor(Date.now() / 1000) },
       process.env.JWT_SECRET || 'dev-secret-change-me',
@@ -167,8 +210,8 @@ router.post('/verify', async (req, res, next) => {
 
     logger.info(`Successful OTP verification for user: ${userId}`);
     return res.json({
-      success : true,
-      message : 'OTP verified successfully',
+      success: true,
+      message: 'OTP verified successfully',
       token,
       expiresIn: 86400,
     });
@@ -180,16 +223,42 @@ router.post('/verify', async (req, res, next) => {
 });
 
 // ─────────────────────────────────────────────────────────────
-// POST /api/otp/invalidate — Admin: revoke an OTP
+// POST /api/otp/invalidate — Admin: revoke an active OTP
 // ─────────────────────────────────────────────────────────────
 
+/**
+ * @swagger
+ * /api/otp/invalidate:
+ *   post:
+ *     summary: Admin — revoke an active OTP
+ *     tags: [OTP]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required: [userId]
+ *             properties:
+ *               userId:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: OTP invalidated
+ *       400:
+ *         description: userId required
+ */
 router.post('/invalidate', async (req, res, next) => {
   const { userId } = req.body;
   if (!userId) return res.status(400).json({ error: 'userId required' });
 
   try {
+    // Mark as used on blockchain
     await fabric.invalidateOTP(userId);
-    await db.query('DELETE FROM otp_sessions WHERE user_id = $1', [userId]);
+
+    // Remove session from MongoDB
+    await OtpSession.deleteOne({ userId });
+
     return res.json({ success: true, message: 'OTP invalidated' });
   } catch (error) {
     next(error);
