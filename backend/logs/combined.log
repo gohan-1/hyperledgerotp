@@ -744,3 +744,525 @@
 {"level":"error","message":"OTP request failed:","timestamp":"2026-04-17T23:13:03.638Z"}
 {"level":"error","message":"Blockchain write failed: TIMEOUT after 30s","path":"/api/otp/request","stack":"Error: Blockchain write failed: TIMEOUT after 30s\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:171:11)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-17T23:13:03.640Z"}
 {"level":"info","message":"127.0.0.1 - - [17/Apr/2026:23:13:03 +0000] \"POST /api/otp/request HTTP/1.1\" 500 54 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-17T23:13:03.646Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:04:10.004Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:04:10.006Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:04:10.451Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:04:10.451Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:04:10.452Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:04:10.452Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:04:10.452Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:04:10.452Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:04:10.453Z"}
+{"level":"error","message":"Failed to connect to Fabric: ENOENT: no such file or directory, open '/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org2.valtrans.com/tls/ca.crt'","timestamp":"2026-04-19T19:04:10.457Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:07:23.518Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:07:23.520Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:07:24.299Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:07:24.301Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T19:07:25.944Z"}
+{"level":"info","message":"HTTP server closed — port released","timestamp":"2026-04-19T19:07:25.945Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T19:07:25.967Z"}
+{"level":"info","message":"HTTP server closed — port released","timestamp":"2026-04-19T19:07:25.968Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T19:07:25.989Z"}
+{"level":"info","message":"HTTP server closed — port released","timestamp":"2026-04-19T19:07:25.989Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T19:07:26.472Z"}
+{"level":"info","message":"HTTP server closed — port released","timestamp":"2026-04-19T19:07:26.473Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:07:26.732Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:07:29.292Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:07:29.293Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:07:29.676Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:07:29.676Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:07:29.677Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:07:29.677Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:07:29.678Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:07:29.678Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:07:29.678Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:07:29.690Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:07:34.691Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:07:34.692Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:53 +0000] \"GET /api-docs HTTP/1.1\" 301 158 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:53.564Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:53 +0000] \"GET /api-docs/ HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:53.582Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:53 +0000] \"GET /api-docs/swagger-ui-init.js HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:53.628Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:53 +0000] \"GET /api-docs/swagger-ui.css HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:53.631Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:53 +0000] \"GET /api-docs/swagger-ui-standalone-preset.js HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:53.641Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:53 +0000] \"GET /api-docs/swagger-ui-bundle.js HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:53.675Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:07:54 +0000] \"GET /api-docs/favicon-32x32.png HTTP/1.1\" 200 628 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:07:54.115Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:08:00 +0000] \"POST /api/auth/register HTTP/1.1\" 409 31 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:08:00.121Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:08:05 +0000] \"GET /api/auth/profile HTTP/1.1\" 401 29 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:08:05.290Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T19:08:13.808Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: contract.newProposal(...).then is not a function","timestamp":"2026-04-19T19:08:13.811Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T19:08:13.811Z"}
+{"level":"error","message":"Blockchain write failed: contract.newProposal(...).then is not a function","path":"/api/otp/request","stack":"Error: Blockchain write failed: contract.newProposal(...).then is not a function\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:205:11)\n    at /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-04-19T19:08:13.812Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:08:13 +0000] \"POST /api/otp/request HTTP/1.1\" 500 85 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:08:13.813Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:12:02.892Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:12:02.893Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:12:03.621Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:12:03.622Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:12:03.623Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:12:03.623Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:12:03.623Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:12:03.623Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:12:03.623Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:12:03.637Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:12:08.638Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:12:08.639Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T19:12:10.195Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.005s,Waiting for LB pick","timestamp":"2026-04-19T19:13:10.256Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T19:13:10.257Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.005s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.005s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:205:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T19:13:10.258Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:13:10 +0000] \"POST /api/otp/request HTTP/1.1\" 500 133 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:13:10.262Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:04.772Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:04.774Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:06.440Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:06.441Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:06.442Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:06.442Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:06.442Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:30:06.442Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:30:06.443Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:30:06.458Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:07.293Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:07.295Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:08.910Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:08.911Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:08.911Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:08.912Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:08.912Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:30:08.912Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:30:08.912Z"}
+{"level":"error","message":"Failed to connect to Fabric: ENOENT: no such file or directory, open '/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org2.valtrans.com/tls/ca.crt'","timestamp":"2026-04-19T19:30:08.917Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:09.302Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:09.303Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:10.865Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:10.866Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:10.867Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:10.867Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:10.868Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:30:10.868Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:30:10.868Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:30:10.881Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:14.578Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:14.580Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:16.164Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:16.164Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:16.164Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:16.165Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:16.165Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:30:16.172Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:21.286Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:21.288Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:23.042Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:23.043Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:23.043Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:23.044Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:23.044Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:30:23.058Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:27.225Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:27.227Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:28.395Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:28.397Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:29.575Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:29.577Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:31.380Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:31.380Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:31.381Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:31.381Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:31.382Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:30:31.382Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:30:31.383Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:30:31.395Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:30:36.396Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:30:36.397Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:30:49.304Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:30:49.305Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:30:51.200Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:30:51.200Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:30:51.200Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:51.200Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:30:51.200Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:30:51.201Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:30:51.201Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:30:51.208Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:30:56.209Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:30:56.210Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T19:30:57.459Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: contract.newProposal(...).then is not a function","timestamp":"2026-04-19T19:30:57.465Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T19:30:57.465Z"}
+{"level":"error","message":"Blockchain write failed: contract.newProposal(...).then is not a function","path":"/api/otp/request","stack":"Error: Blockchain write failed: contract.newProposal(...).then is not a function\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:205:11)\n    at /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-04-19T19:30:57.466Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:30:57 +0000] \"POST /api/otp/request HTTP/1.1\" 500 85 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:30:57.470Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:32:54.812Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:32:54.814Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:32:56.426Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:32:56.427Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:32:56.427Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:32:56.428Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:32:56.428Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:32:56.428Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:32:56.428Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:32:56.443Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:33:01.445Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:33:01.446Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:33:36.727Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:33:36.729Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:33:38.381Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:33:38.382Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:33:38.383Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:33:38.384Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:33:38.384Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:33:38.397Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:33:58.221Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:33:58.222Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:34:00.059Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:34:00.060Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:34:01.551Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:34:01.552Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:34:01.553Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:01.553Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:01.554Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:34:01.567Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:34:03.251Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:34:03.253Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:34:04.807Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:34:04.808Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:34:04.808Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:04.809Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:04.809Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:34:04.821Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:34:13.080Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:34:13.082Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:34:14.622Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:34:14.623Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:34:14.624Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:14.625Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:14.625Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:34:14.635Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:34:52.704Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:34:52.706Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:34:54.893Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:34:54.893Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:34:54.894Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:54.894Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:34:54.895Z"}
+{"level":"info","message":"TLS cert  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T19:34:54.895Z"}
+{"level":"info","message":"Identity  : /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp","timestamp":"2026-04-19T19:34:54.895Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:34:54.906Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:34:59.906Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:34:59.906Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:35:36.624Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:35:36.625Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:35:38.111Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:35:38.111Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:35:38.111Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:35:38.111Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:35:38.112Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:35:38.119Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:35:41.266Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:35:41.268Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:35:42.718Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:35:42.719Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:35:42.719Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:35:42.720Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:35:42.720Z"}
+{"level":"error","message":"Failed to connect to Fabric: network is not defined","timestamp":"2026-04-19T19:35:42.733Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:35:53.104Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:35:53.106Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:35:54.687Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:35:54.688Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:35:54.689Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:35:54.689Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:35:54.689Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:35:54.701Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:35:59.703Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:35:59.704Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T19:36:02.996Z"}
+{"level":"info","message":"Endorsing StoreOTPHash...","timestamp":"2026-04-19T19:36:02.998Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.013s,metadata filters: 0.001s,Waiting for LB pick","timestamp":"2026-04-19T19:37:03.045Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T19:37:03.045Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.013s,metadata filters: 0.001s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.013s,metadata filters: 0.001s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:205:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T19:37:03.047Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:37:03 +0000] \"POST /api/otp/request HTTP/1.1\" 500 158 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:37:03.056Z"}
+{"level":"info","message":"Fabric gateway closed","timestamp":"2026-04-19T19:38:02.992Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:39:12.783Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:39:12.785Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:39:14.475Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:39:14.476Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:39:14.476Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:39:14.476Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:39:14.477Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:39:14.489Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:39:19.490Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:39:19.492Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T19:39:20.387Z"}
+{"level":"info","message":"Endorsing StoreOTPHash...","timestamp":"2026-04-19T19:39:20.393Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.004s,metadata filters: 0.001s,Waiting for LB pick","timestamp":"2026-04-19T19:40:20.440Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T19:40:20.441Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.004s,metadata filters: 0.001s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 60.000s,name resolution: 0.004s,metadata filters: 0.001s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:205:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T19:40:20.442Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:40:20 +0000] \"POST /api/otp/request HTTP/1.1\" 500 158 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:40:20.444Z"}
+{"level":"info","message":"Fabric gateway closed","timestamp":"2026-04-19T19:43:42.218Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T19:48:12.204Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T19:48:12.206Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T19:48:14.078Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T19:48:14.078Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T19:48:14.079Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:48:14.079Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T19:48:14.079Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T19:48:14.087Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T19:48:18.528Z"}
+{"level":"info","message":"Endorsing StoreOTPHash...","timestamp":"2026-04-19T19:48:18.530Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T19:48:19.089Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T19:48:19.090Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 59.998s,name resolution: 0.005s,Waiting for LB pick","timestamp":"2026-04-19T19:49:18.571Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T19:49:18.572Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 59.998s,name resolution: 0.005s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 59.998s,name resolution: 0.005s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:205:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T19:49:18.572Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:19:49:18 +0000] \"POST /api/otp/request HTTP/1.1\" 500 133 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T19:49:18.575Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:19:46.208Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:19:46.210Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:19:46.629Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:19:46.630Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:19:46.631Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:19:46.631Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:19:46.631Z"}
+{"level":"info","message":"cryptoPath:        ./devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:19:46.631Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:19:46.632Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:19:46.632Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:19:46.632Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:19:46.632Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:19:46.632Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:19:46.632Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:19:48.932Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:19:48.933Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:19:49.332Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:19:49.333Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:19:49.334Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:19:49.334Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:19:49.334Z"}
+{"level":"info","message":"cryptoPath:        ./devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:19:49.334Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:19:49.335Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:19:49.335Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:19:49.335Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:19:49.335Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:19:49.335Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:19:49.335Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:19:59.290Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:19:59.292Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:19:59.666Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:19:59.666Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:19:59.666Z"}
+{"level":"info","message":"Org1 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:19:59.667Z"}
+{"level":"info","message":"Org2 peer : peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:19:59.667Z"}
+{"level":"info","message":"Fabric connected - channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:19:59.678Z"}
+{"level":"warn","message":"Org2 peer not ready: Failed to connect before the deadline - endorsement may fail","timestamp":"2026-04-19T20:20:04.679Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:20:04.681Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:20:54.151Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:20:54.153Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:20:54.588Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:20:57.420Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:20:57.421Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:20:57.811Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:21:49.522Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:21:49.523Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:21:49.928Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:21:55.173Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:21:55.175Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:21:55.604Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:22:02.815Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:22:02.817Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:22:03.208Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:24:53.377Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:24:53.379Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:24:53.865Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:24:53.865Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:24:53.866Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:24:53.866Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:24:53.867Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:24:53.867Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:24:53.867Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:24:53.867Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:24:53.867Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:24:53.868Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:24:53.868Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:24:53.868Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:24:53.878Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:24:53.878Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:25:16.445Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: contract.newProposal(...).then is not a function","timestamp":"2026-04-19T20:25:16.448Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T20:25:16.448Z"}
+{"level":"error","message":"Blockchain write failed: contract.newProposal(...).then is not a function","path":"/api/otp/request","stack":"Error: Blockchain write failed: contract.newProposal(...).then is not a function\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:181:11)\n    at /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-04-19T20:25:16.449Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:25:16 +0000] \"POST /api/otp/request HTTP/1.1\" 500 85 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:25:16.452Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:26:33.909Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:26:33.910Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:26:34.358Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:26:34.359Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:26:34.360Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:26:34.360Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:26:34.360Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:26:34.360Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:26:34.361Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:26:34.361Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:26:34.361Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:26:34.361Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:26:34.361Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:26:34.361Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:26:34.372Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:26:34.372Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:26:50.011Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 14.999s,name resolution: 0.018s,metadata filters: 0.001s,time to current attempt start: 0.001s,Waiting for LB pick","timestamp":"2026-04-19T20:27:05.064Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T20:27:05.065Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 14.999s,name resolution: 0.018s,metadata filters: 0.001s,time to current attempt start: 0.001s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 14.999s,name resolution: 0.018s,metadata filters: 0.001s,time to current attempt start: 0.001s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:179:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T20:27:05.066Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:27:05 +0000] \"POST /api/otp/request HTTP/1.1\" 500 196 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:27:05.069Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:31:11.269Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:31:11.271Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:31:13.324Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:31:13.325Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:31:13.325Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:31:13.326Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:31:13.326Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:31:13.327Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:31:13.327Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:31:13.327Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:31:13.328Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:31:13.328Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:31:13.328Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:31:13.328Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:31:13.339Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:31:13.340Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:31:15.694Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 15.001s,name resolution: 0.018s,metadata filters: 0.001s,Waiting for LB pick","timestamp":"2026-04-19T20:31:30.749Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T20:31:30.749Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 15.001s,name resolution: 0.018s,metadata filters: 0.001s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 15.001s,name resolution: 0.018s,metadata filters: 0.001s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:181:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T20:31:30.751Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:31:30 +0000] \"POST /api/otp/request HTTP/1.1\" 500 158 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:31:30.759Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:32:54.287Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:32:54.289Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:32:54.711Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:32:54.712Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:32:54.713Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:32:54.714Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:32:54.714Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:32:54.714Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:32:54.714Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:32:54.715Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:32:54.715Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:32:54.715Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:32:54.715Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:32:54.715Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:32:54.726Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:32:54.726Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:33:02.124Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: 4 DEADLINE_EXCEEDED: Deadline exceeded after 15.001s,name resolution: 0.014s,metadata filters: 0.001s,Waiting for LB pick","timestamp":"2026-04-19T20:33:17.184Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T20:33:17.185Z"}
+{"level":"error","message":"Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 15.001s,name resolution: 0.014s,metadata filters: 0.001s,Waiting for LB pick","path":"/api/otp/request","stack":"Error: Blockchain write failed: 4 DEADLINE_EXCEEDED: Deadline exceeded after 15.001s,name resolution: 0.014s,metadata filters: 0.001s,Waiting for LB pick\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:181:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:5","timestamp":"2026-04-19T20:33:17.186Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:33:17 +0000] \"POST /api/otp/request HTTP/1.1\" 500 158 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:33:17.191Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:35:30.116Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:35:30.118Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:35:30.628Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:35:30.628Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:35:30.629Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:35:30.629Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:35:30.629Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:35:30.629Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:35:30.630Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:35:30.630Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:35:30.630Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:35:30.630Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:35:30.630Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:35:30.630Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T20:35:39.116Z"}
+{"level":"error","message":"Fabric client not connected. Call connectToFabric() first.","path":"/api/otp/request","stack":"Error: Fabric client not connected. Call connectToFabric() first.\n    at ensureConnected (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:301:11)\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:180:3)\n    at /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:107:18\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)","timestamp":"2026-04-19T20:35:39.118Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:35:39 +0000] \"POST /api/otp/request HTTP/1.1\" 500 70 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:35:39.124Z"}
+{"level":"error","message":"Failed to connect to Fabric: Peer not reachable at peer0.org1.valtrans.com:7051 (alias: peer0.org1.valtrans.com): Failed to connect before the deadline","timestamp":"2026-04-19T20:35:40.639Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:35:45.905Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:35:45.907Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:35:46.300Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:35:46.301Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:35:46.301Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:35:46.302Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:35:46.302Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:35:46.303Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:35:46.303Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:35:46.304Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:35:46.304Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:35:46.304Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:35:46.304Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:35:46.304Z"}
+{"level":"error","message":"Failed to connect to Fabric: Peer not reachable at peer0.org1.valtrans.com:7051 (alias: peer0.org1.valtrans.com): Failed to connect before the deadline","timestamp":"2026-04-19T20:35:56.313Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:38:50.360Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:38:50.362Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:38:50.785Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:38:50.785Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:38:50.786Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:38:50.786Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:38:50.786Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:38:50.787Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:38:50.813Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:38:50.813Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:39:16.304Z"}
+{"level":"info","message":"OTP hash stored on chain — user: user_123, txId: ","timestamp":"2026-04-19T20:39:18.421Z"}
+{"level":"info","message":"[DEV ONLY] OTP for user_123: 820677","timestamp":"2026-04-19T20:39:18.468Z"}
+{"level":"info","message":"OTP requested for user: user_123","timestamp":"2026-04-19T20:39:18.469Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:39:18 +0000] \"POST /api/otp/request HTTP/1.1\" 200 84 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:39:18.474Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:42:07.607Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:42:07.609Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:42:08.013Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:42:08.013Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:42:08.013Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:42:08.014Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:42:08.015Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:42:08.030Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:42:08.030Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:42:44.041Z"}
+{"level":"info","message":"Fabric gateway closed","timestamp":"2026-04-19T20:42:44.117Z"}
+{"level":"info","message":"gRPC client closed","timestamp":"2026-04-19T20:42:44.117Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T20:42:44.117Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T20:42:44.118Z"}
+{"level":"info","message":"SIGINT received — shutting down gracefully","timestamp":"2026-04-19T20:42:44.118Z"}
+{"level":"error","message":"storeOTPHash failed for user_123: Channel has been shut down","timestamp":"2026-04-19T20:42:44.123Z"}
+{"level":"error","message":"OTP request failed:","timestamp":"2026-04-19T20:42:44.123Z"}
+{"level":"error","message":"Blockchain write failed: Channel has been shut down","path":"/api/otp/request","stack":"Error: Blockchain write failed: Channel has been shut down\n    at Object.storeOTPHash (/home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/services/fabric-client.js:197:11)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/backend/routes/otp.js:108:5","timestamp":"2026-04-19T20:42:44.124Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:42:44 +0000] \"POST /api/otp/request HTTP/1.1\" 500 63 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:42:44.127Z"}
+{"level":"info","message":{"host":"localhost","port":"4000"},"timestamp":"2026-04-19T20:42:45.681Z"}
+{"level":"info","message":"Swagger UI: http://localhost:4000/api-docs","timestamp":"2026-04-19T20:42:45.682Z"}
+{"level":"info","message":"MongoDB connected successfully","timestamp":"2026-04-19T20:42:46.077Z"}
+{"level":"info","message":"Connected to MongoDB.","timestamp":"2026-04-19T20:42:46.078Z"}
+{"level":"info","message":"channelName:       otpchannel","timestamp":"2026-04-19T20:42:46.079Z"}
+{"level":"info","message":"chaincodeName:     otp","timestamp":"2026-04-19T20:42:46.079Z"}
+{"level":"info","message":"mspId:             Org1MSP","timestamp":"2026-04-19T20:42:46.079Z"}
+{"level":"info","message":"cryptoPath:        /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com","timestamp":"2026-04-19T20:42:46.079Z"}
+{"level":"info","message":"keyDirectoryPath:  /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/keystore","timestamp":"2026-04-19T20:42:46.080Z"}
+{"level":"info","message":"certDirectoryPath: /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/users/Admin@org1.valtrans.com/msp/signcerts","timestamp":"2026-04-19T20:42:46.080Z"}
+{"level":"info","message":"tlsCertPath:       /home/vishnu/Downloads/blockchain-otp-complete/blockchain-otp/devops/fabric-samples/test-network/organizations/peerOrganizations/org1.valtrans.com/peers/peer0.org1.valtrans.com/tls/ca.crt","timestamp":"2026-04-19T20:42:46.080Z"}
+{"level":"info","message":"peerEndpoint:      peer0.org1.valtrans.com:7051","timestamp":"2026-04-19T20:42:46.080Z"}
+{"level":"info","message":"peerHostAlias:     peer0.org1.valtrans.com","timestamp":"2026-04-19T20:42:46.080Z"}
+{"level":"info","message":"Connecting to Hyperledger Fabric network...","timestamp":"2026-04-19T20:42:46.080Z"}
+{"level":"info","message":"Fabric connected — channel: otpchannel, chaincode: otp","timestamp":"2026-04-19T20:42:46.097Z"}
+{"level":"info","message":"Connected to Hyperledger Fabric.","timestamp":"2026-04-19T20:42:46.097Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:42:55.200Z"}
+{"level":"info","message":"OTP hash stored on chain — user: user_123, txId: ","timestamp":"2026-04-19T20:42:57.291Z"}
+{"level":"info","message":"[DEV ONLY] OTP for user_123: 441046","timestamp":"2026-04-19T20:42:57.337Z"}
+{"level":"info","message":"OTP requested for user: user_123","timestamp":"2026-04-19T20:42:57.337Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:42:57 +0000] \"POST /api/otp/request HTTP/1.1\" 200 84 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:42:57.344Z"}
+{"level":"info","message":"OTP verification for user_123: true","timestamp":"2026-04-19T20:43:15.659Z"}
+{"level":"info","message":"Successful OTP verification for user: user_123","timestamp":"2026-04-19T20:43:15.709Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:43:15 +0000] \"POST /api/otp/verify HTTP/1.1\" 200 238 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:43:15.710Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:43:43 +0000] \"POST /api/otp/verify HTTP/1.1\" 400 39 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:43:43.566Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:43:50 +0000] \"POST /api/otp/verify HTTP/1.1\" 400 39 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:43:50.566Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:43:54 +0000] \"POST /api/otp/verify HTTP/1.1\" 400 39 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:43:54.440Z"}
+{"level":"info","message":"StoreOTPHash -> userId: user_123","timestamp":"2026-04-19T20:44:02.199Z"}
+{"level":"info","message":"OTP hash stored on chain — user: user_123, txId: ","timestamp":"2026-04-19T20:44:04.238Z"}
+{"level":"info","message":"[DEV ONLY] OTP for user_123: 874234","timestamp":"2026-04-19T20:44:04.280Z"}
+{"level":"info","message":"OTP requested for user: user_123","timestamp":"2026-04-19T20:44:04.280Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:44:04 +0000] \"POST /api/otp/request HTTP/1.1\" 200 84 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:44:04.282Z"}
+{"level":"info","message":"OTP verification for user_123: false","timestamp":"2026-04-19T20:44:21.384Z"}
+{"level":"warn","message":"Failed OTP verification for user: user_123","timestamp":"2026-04-19T20:44:21.384Z"}
+{"level":"info","message":"127.0.0.1 - - [19/Apr/2026:20:44:21 +0000] \"POST /api/otp/verify HTTP/1.1\" 401 34 \"-\" \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36\"","timestamp":"2026-04-19T20:44:21.386Z"}
+{"level":"info","message":"Fabric gateway closed","timestamp":"2026-04-19T20:45:45.369Z"}

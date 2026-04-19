@@ -99,6 +99,7 @@ router.post('/request', otpRateLimit, async (req, res, next) => {
     const expiry = getExpiry(parseInt(process.env.OTP_EXPIRY_SECONDS) || 300);
 
     // Compute hash (same formula used during verify)
+    console.log(otp)
     const otpHash = fabric.computeOTPHash(otp, userId, String(timestamp));
 
     console.log(otpHash)
